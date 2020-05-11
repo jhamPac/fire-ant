@@ -28,7 +28,7 @@ func parseWiki(url string) ([]string, error) {
 
 	doc.Find(".div-col").Each(func(_ int, s *goquery.Selection) {
 		s.Find("li").Each(func(_ int, t *goquery.Selection) {
-			text := strings.Split(t.Text(), "-")
+			text := strings.Split(t.Text(), " –")
 
 			artist := text[0]
 			song := strings.Trim(text[1], " \"")
