@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -22,5 +23,12 @@ func makeRequest(url string) (string, error) {
 }
 
 func main() {
-	fmt.Println("This is how you Makefile")
+	url := "https://en.wikipedia.org/wiki/The_Pitchfork_500"
+
+	body, err := makeRequest(url)
+	if err != nil {
+		log.Fatalf("Request failed %v", err)
+	}
+
+	fmt.Println(body)
 }
