@@ -12,8 +12,11 @@ func parseWiki(url string) string {
 	defer resp.Body.Close()
 
 	doc, _ := goquery.NewDocumentFromReader(resp.Body)
-	fmt.Println(doc)
-	return ""
+
+	var tracks []string
+	var track string
+
+	tracks = append(tracks, "artist,song\n")
 }
 
 func main() {
